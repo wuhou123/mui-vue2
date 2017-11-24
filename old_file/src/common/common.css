@@ -1,0 +1,255 @@
+html {
+	font-size: 20px;
+}
+
+body {
+	font-size: .6rem;
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	color: #456;
+}
+
+body,
+.mui-content {
+	background-color: #f0f5f8;
+}
+* { touch-action: none; }
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.mui-table-view:after,
+.mui-table-view:before {
+	content: none;
+}
+
+.mui-table-view-cell {
+	font-size: 16px;
+}
+
+.mui-btn-block {
+	padding: .5rem 0;
+}
+
+
+/*覆盖默认toast样式*/
+
+.mui-toast-message {
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/*公共header*/
+
+header.mui-bar {
+	background-color: transparent;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#40ace4), to(rgba(22, 156, 226, 0.8)));
+	background-image: linear-gradient(to bottom, #40ace4, rgba(22, 156, 226, 0.8));
+}
+
+header a,
+header .mui-title {
+	color: #FFF;
+}
+
+
+/*按钮默认颜色*/
+
+input[type='submit'],
+.mui-btn-primary {
+	border: 1px solid #40ace4;
+	background-color: #40ace4;
+	-webkit-transition: none;
+	transition: none;
+}
+
+input[type='submit']:disabled,
+.mui-btn-primary:disabled {
+	background-color: #e0e0e0;
+	border: 1px solid #e0e0e0;
+}
+
+.mui-btn-outlined {
+	background-color: transparent;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+
+/*隐藏百度地图logo防止点击*/
+
+.anchorBL {
+	display: none;
+}
+.cn-round {
+	font-family: 'zhongyuan';
+}
+
+.mui-input-row label {
+	font-size: .8rem;
+}
+
+
+/*加载动画*/
+#loading_2 {
+	width: 50px;
+	height: 100%;
+	position: relative;
+	margin:50% calc(50% - 50px);
+}
+
+#loading_2 div {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	margin-left: 25px;
+	animation: loading 1.8s linear infinite;
+}
+
+#loading_2 span {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius:50%;
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(45deg);
+	}
+	50% {
+		opacity: 1;
+		transform: rotate(160deg);
+	}
+	62% {
+		opacity: 0;
+	}
+	65% {
+		opacity: 0;
+		transform: rotate(200deg);
+	}
+	90% {
+		transform: rotate(340deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#loading_2 span {
+	background: #8EE5EE;
+}
+
+#loading_2 div:nth-child(1) {
+	animation-delay: 0.2s;
+}
+
+#loading_2 div:nth-child(2) {
+	animation-delay: 0.4s;
+}
+
+#loading_2 div:nth-child(3) {
+	animation-delay: 0.6s;
+}
+
+#loading_2 div:nth-child(4) {
+	animation-delay: 0.8s;
+}
+/*加载动画*/
+.loader-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 3rem;
+	height: 3rem;
+	z-index: 999;
+}
+.loader-container{
+    width: 80px;
+    height: auto;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 6px;	
+}
+.loader {
+	position: relative;
+	margin: 0 auto;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	font-size: 5px;
+	background: #f2970b;
+	background: -webkit-linear-gradient(left, #f2970b 10%, rgba(242, 151, 11, 0) 42%);
+	background: linear-gradient(to right, #f2970b 10%, rgba(242, 151, 11, 0) 42%);
+	-webkit-animation: load 1.4s infinite linear;
+	animation: load 1.4s infinite linear;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.loader:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 50%;
+	border-radius: 100% 0 0 0;
+	background: #f2970b;
+}
+
+.loader:after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	background:url(../../statics/images/loading.jpg) center center;
+	background-size:contain
+}
+@-webkit-keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+/*首页*/

@@ -1,0 +1,22 @@
+.news .mui-bar{
+   	position:inherit;
+   }
+   
+.mui-title{
+	font-size: 18px;
+	color:#007aff;
+}
+.mui-bar .mui-icon{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.mui-bar.mui-bar-nav{
+	height: 30px;
+}
+.mui-bar.mui-bar-nav > a{
+	font-size: 18px;
+}
+
+.mui-bar.mui-bar-nav  .mui-title{
+	line-height: 25px;
+}
