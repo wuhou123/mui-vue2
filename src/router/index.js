@@ -65,6 +65,11 @@ const login = (resolve) => {
     resolve(module)
   })
 }
+const Home = (resolve) => {
+  import('@/components/home/home').then((module) => {
+    resolve(module)
+  })
+}
 
 export default new Router({
   routes: [
@@ -123,6 +128,10 @@ export default new Router({
     {
       path: '/mine',
       component: Mine
+    },
+    {
+      path: '/home',
+      component: Home
     }
   ]
 })

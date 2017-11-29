@@ -24,6 +24,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'static':path.resolve(__dirname,'static')
     },
     symlinks: false
   },
@@ -71,6 +72,13 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test:/\.jade$/,
+        loader:'jade-loader'
+      },{
+        test:/\.pug$/,
+        loader:'pug-loader'
       }
     ]
   }
