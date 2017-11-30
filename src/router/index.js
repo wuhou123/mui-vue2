@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store'
 
 // import Index from '@/components/index/index'
 // import Find from '@/components/find/find'
@@ -71,23 +72,25 @@ const Home = (resolve) => {
   })
 }
 
-export default new Router({
+const router = new Router({
   routes: [
     // 根路径
     {
       path: '/',
       redirect: '/index',
-      component: Index
+      component: Index,
+      meta:{title:'首页',isShowHead:false,isShowFoot:true}
     },
     // 首页
     {
       path: '/index',
-      component: Index
+      component: Index,
+      meta:{title:'首页',isShowHead:false,isShowFoot:true}
     },
     // 登录
     {
       path: '/login',
-      component: login
+      component: login      
     },
     // 商家列表
     {
@@ -117,7 +120,8 @@ export default new Router({
     // 发现
     {
       path: '/find',
-      component: Find
+      component: Find,
+      meta:{title:'优惠劵',isShowHead:true,isShowFoot:true,isShowBack:false}
     },
     // 订单
     {
@@ -127,11 +131,22 @@ export default new Router({
     // 我的
     {
       path: '/mine',
-      component: Mine
+      component: Mine,
+      meta:{title:'我的',isShowHead:true,isShowFoot:true,isShowBack:true}
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+   		meta:{title:'会员',isShowHead:false,isShowFoot:true,isShowBack:false}
     }
   ]
 })
+	router.afterEach(function(to,from){
+		console.log(to.meta.title,to.meta.isShowBack)
+		if(to.meta.title){
+			store.dispatch("updateNavbarTitle", to.meta.title);
+			store.dispatch('updateNavbarStatus',{isShowHead:to.meta.isShowHead,isShowFoot:to.meta.isShowFoot,isShowBack:to.meta.isShowBack})
+			document.title = "加时代-" + to.meta.title || "";
+		}		
+	})
+	export default router

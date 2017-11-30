@@ -1,4 +1,4 @@
-export const Vwaiting = function(msg){
+export var Vwaiting = function(msg){
 		var relMsg = msg?msg:''
 		if(document.getElementById('loaderWrap')){
 		document.getElementById('loaderWrap').style.display = 'block';
@@ -11,7 +11,7 @@ export const Vwaiting = function(msg){
 		screen.innerHTML = '<div class="loader-container"><div class="loader"></div><span class="msg-font">'+relMsg+'</span></div>';
 		document.body.appendChild(screen);
 	}
-export const Cwaiting = function(){
+export var Cwaiting = function(){
 		console.log('进行了:'+document.getElementById('loaderWrap'))
 		if(document.getElementById('loaderWrap')){
 			document.getElementById('loaderWrap').style.display = 'none'

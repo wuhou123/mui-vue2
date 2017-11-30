@@ -852,14 +852,14 @@
 		background-color: #f0ad4e;
 		color: #eeefdd;
 	}
- img[lazy=loading] {
+ /*img[lazy=loading] {
   background: url(../../../statics/images/loading.gif) no-repeat center center;
   background-size: cover
   }
   img[lazy=error] {
   background: url(../../../statics/images/loading.gif) no-repeat center center;
   background-size: cover
-  }
+  }*/
   .biqiang{
   	background:#fff;
   	height:1.2rem;

@@ -1,18 +1,18 @@
 <template lang="pug">
   div
     #content.routerview.viewMargin
-      header.mui-bar.mui-bar-nav
-        a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left
-        h1.mui-title 测试
+      header.mui-bar.mui-bar-nav(v-if="$store.state.appData.isShowHead")
+        a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left(v-show="$store.state.appData.isShowBack")
+        h1.mui-title {{$store.state.appData.navbarTitle}}
       transition(name='fade' mode="out-in")
         router-view
-    nav.mui-bar.mui-bar-tab
-      .mui-tab-item(v-for="item in footerMenu",@tap="goTo(item)",:class="{'mui-active':true}")
-        span.iconfont.mui-icon(:class="item.icon")
+    nav.mui-bar.mui-bar-tab(v-if="$store.state.appData.isShowFoot")
+      .mui-tab-item(v-for="item in footerMenu",@tap="goTo(item)",:class="{'mui-active':item.name==$store.state.appData.navbarTitle}")
+        span.iconfont.mui-icon(:class="item.name==$store.state.appData.navbarTitle?item.iconActive:item.icon")
         span.mui-tab-label {{item.name}}
 </template>
 
-<script>
+<script>	
 export default {
   components: {},
   name: 'app',
@@ -23,25 +23,25 @@ export default {
         icon:'icon-home-normal',
         iconActive:'icon-home-press',
         name:'首页',
-        router:'/Home'
+        router:'/index'
       },
         {
           icon:'icon-More-normal',
           iconActive:'icon-More-press',
           name:'会员',
-          router:'/member'
+          router:'/home'
         },
         {
           icon:'icon-youhuijuan-xianxing',
-          iconActive:'icon-youhuijuan',
+          iconActive:'icon-youhuijuan-copy',
           name:'优惠劵',
-          router:'/car'
+          router:'/find'
         },
         {
           icon:'icon-Username',
           iconActive:'icon-Username-press',
           name:'我的',
-          router:'/search'
+          router:'/mine'
         }
       ]
     }
@@ -54,30 +54,15 @@ export default {
   methods:{
     goTo(item){
       console.log(item);
-      if(item.name == '会员'){
-        this.$router.push('/home')
-      }
-      if(item.name == '首页'){
-        this.$router.push('/index')
-      }
-      if(item.name == '优惠劵'){
-      	this.$router.push('/find')
-      }
+    	this.$router.push(item.router)
     }
   }
 }
 </script>
 
 <style>
-	@import '../static/css/muihead.css';
-/*body {
-  background-color: #ebebeb;
-}
-
-#app {
-  font-family: Arial,Helvetica,sans-serif;
-}*/
-
+@import '~static/common/common.css';
+@import '~static/css/muihead.css';
 body{
   background-color:white;
 }

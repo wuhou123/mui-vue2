@@ -133,11 +133,11 @@
                             span(style='font-size:14px;color:#FF5E52;') ￥10
                         span.mui-badge.mui-badge-danger(style='float:left;') 领劵立减100元
 </template>
-<script>
-  import '../../../static/common/common.css'
-  import '../../../static/js/mui.pullToRefresh.js'
-  import '../../../static/js/mui.pullToRefresh.material.js'
-	import mui from '../../../static/js/mui'
+<script>  
+  import 'static/js/mui.pullToRefresh.js'
+  import 'static/js/mui.pullToRefresh.material.js'
+	import mui from 'static/js/mui'
+	import 'static/common/common.css'
   export default {
     data () {
       return {
@@ -853,8 +853,8 @@
     background-color: #f0ad4e;
     color: #eeefdd;
   }
-
-  img[lazy=loading] {
+/*懒加载样式*/
+  /*img[lazy=loading] {
     background: url(./img/loading.gif) no-repeat center center;
     background-size: cover
   }
@@ -862,7 +862,7 @@
   img[lazy=error] {
     background: url(./img/loading.gif) no-repeat center center;
     background-size: cover
-  }
+  }*/
 
   .biqiang {
     background: #fff;

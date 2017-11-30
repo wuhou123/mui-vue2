@@ -1,22 +1,17 @@
-// 组装模块并导出 store 的地方
-
+import appData from './app-data'
+import appEvent from './app-event'
+import routerStatus from './router-status'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import state from './state.js'
-import mutations from './mutations.js'
-import * as actions from './actions.js'
-import * as getters from './getters.js'
-import createLogger from 'vuex/dist/logger' // Vuex 自带一个日志插件用于一般的调试
 
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
-export default new Vuex.Store({
-  state,
-  mutations,
-  actions,
-  getters,
-  strict: debug,
-  plugins: debug ? [createLogger()] : []
+ const store = new Vuex.Store({
+    strict: debug, //在非生产环境下，使用严格模式
+    modules: {
+        appData, routerStatus, appEvent
+    }
 })
+export default store
