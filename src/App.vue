@@ -75,12 +75,13 @@ body{
 	margin-top: 45px;
 }*/
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+  transition:0.5s;
+  transform: translate3d(100%, 0, 0)
 }
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-leave-active {
+  transform: translate3d(-100%, 0, 0)
 }
-.mui-bar-tab .mui-tab-item.mui-active {
+.mui-bar.mui-bar-tab .mui-tab-item.mui-active {
   color: #FF5E52;
 }
 .mui-bar-nav + div{

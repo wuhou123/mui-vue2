@@ -29,7 +29,7 @@ Vue.use(Mint)
 // 图片懒加载
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
-  loading: '/static/loading-bars.svg'
+  loading: require('static/loading-bars.svg')
   // loading: require('@/assets/img/logo.png')
 })
 //定义全局加载组件
