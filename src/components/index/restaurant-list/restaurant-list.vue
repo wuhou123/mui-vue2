@@ -2,7 +2,7 @@
 
 <template>
   <div class="restaurant-list">
-    <header-bar @back="back"></header-bar>
+<!--    <header-bar @back="back"></header-bar>-->
 
     <seller-list-item v-for="item in restaurantList"
                       :key="item.name"
@@ -14,8 +14,8 @@
 <script>
 import SellerListItem from '@/components/base/seller-list-item/seller-list-item'
 import HeaderBar from '@/components/base/header-bar/header-bar'
-
 import axios from 'axios'
+import importUrl from '../../../../mock/restaurant-list.json'
 
 export default {
   components: {
@@ -31,6 +31,10 @@ export default {
   watch: {},
   methods: {
     _initRestaurantListData () {
+    	if(process.env.NODE_ENV == 'production'){
+    		this.restaurantList = importUrl.data.poilist
+    		return;
+    	}    	
       axios.get('/api/restaurantList').then(res => {
         if (res.data.code === 0) {
           this.restaurantList = res.data.data.data.poilist

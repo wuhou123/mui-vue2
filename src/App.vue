@@ -4,7 +4,7 @@
       header.mui-bar.mui-bar-nav(v-if="$store.state.appData.isShowHead")
         a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left(v-show="$store.state.appData.isShowBack")
         h1.mui-title {{$store.state.appData.navbarTitle}}
-      transition(name='fade' mode="out-in")
+      transition(:name='$store.state.routerStatus.transition',mode="out-in")
         router-view
     nav.mui-bar.mui-bar-tab(v-if="$store.state.appData.isShowFoot")
       .mui-tab-item(v-for="item in footerMenu",@tap="goTo(item)",:class="{'mui-active':item.name==$store.state.appData.navbarTitle}")
@@ -12,7 +12,9 @@
         span.mui-tab-label {{item.name}}
 </template>
 
-<script>	
+<script>
+ import mui from 'static/js/mui'
+ import store from './store'
 export default {
   components: {},
   name: 'app',
@@ -47,13 +49,13 @@ export default {
     }
   },
   created (){
-  	console.log('jinrule')
+  	console.log('初始进入')
   	//当app.vue创建完成以后，自动加载Home.vue模块
 		 this.$router.push('/index')
   },
   methods:{
     goTo(item){
-      console.log(item);
+      console.log(item,this.$store.state.routerStatus.transition);      
     	this.$router.push(item.router)
     }
   }
@@ -63,9 +65,9 @@ export default {
 <style>
 @import '~static/common/common.css';
 @import '~static/css/muihead.css';
-body{
+/*body{
   background-color:white;
-}
+}*/
 .mint-tab-item-icon {
   width: 48px;
   height: 48px;
@@ -74,12 +76,53 @@ body{
 /*.routerview{
 	margin-top: 45px;
 }*/
-.fade-enter-active, .fade-leave-active {
-  transition:0.5s;
-  transform: translate3d(100%, 0, 0)
+.fade-enter-active {
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    opacity: 1
 }
-.fade-leave-active {
-  transform: translate3d(-100%, 0, 0)
+
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}
+/*过渡动画*/
+/*下一页*/
+.next-enter-active {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    opacity: 1;
+    position: fixed;
+    width:100vw;
+}
+
+.next-enter, .next-leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+}
+
+.next-leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+/*上一页*/
+.prev-enter-active {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    width:100vw;
+}
+
+.prev-enter, .prev-leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.prev-active {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 .mui-bar.mui-bar-tab .mui-tab-item.mui-active {
   color: #FF5E52;

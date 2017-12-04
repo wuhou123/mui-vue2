@@ -31,7 +31,7 @@
                         @toRestaurant="toRestaurant()"></seller-list-item>
     </div>
 
-    <tab-bar></tab-bar>
+    <!--<tab-bar></tab-bar>-->
   </div>
 </template>
 
@@ -42,6 +42,7 @@ import CrossLine from '@/components/base/cross-line/cross-line'
 import TitleBar from '@/components/base/title-bar/title-bar'
 import SellerListItem from '@/components/base/seller-list-item/seller-list-item'
 import axios from 'axios'
+import importUrl from '../../../mock/index-list.json'
 
 export default {
   components: {
@@ -100,7 +101,7 @@ export default {
   methods: {
     toList (item) {
       this.$router.push({
-        path: '/restaurant_list'
+        path: '/restaurant_list/'
       })
     },
     toRestaurant () {
@@ -110,11 +111,17 @@ export default {
     },
     // 初始化列表数据
     _initIndexListData () {
+    	console.log(importUrl)
+    	if(process.env.NODE_ENV == 'production'){
+    		this.indexList = importUrl.data.poilist
+    		return
+    	}    	
       axios.get('/api/indexList').then(res => {
-        // console.log(res)
+        console.log(res)        
         if (res.data.code === 0) {
-          this.indexList = res.data.data.data.poilist
-        }
+          this.indexList = res.data.data.data.poilist;
+          
+        }   	 			
       }).catch(err => {
         console.log(err)
       })

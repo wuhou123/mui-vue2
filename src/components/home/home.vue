@@ -136,7 +136,7 @@
 <script>  
   import 'static/js/mui.pullToRefresh.js'
   import 'static/js/mui.pullToRefresh.material.js'
-	import mui from 'static/js/mui'
+	import mui from 'static/js/mui'	
 	import 'static/common/common.css'
   export default {
     data () {
@@ -201,7 +201,7 @@
           {
             name: '更多类目',
             href: '#',
-            icon: 'icon-gengduo'
+            icon: 'icon-gengduo-copy'
           },
         ],
         menus: [{
@@ -443,12 +443,7 @@
   html {
     height: 100% !important
   }
-
-  body {
-    background: #fff;
-    margin: 0 auto
-  }
-
+  
   .iconColor {
     color: #FF5E52
   }
@@ -766,8 +761,8 @@
 
   .checkHome {
     width: 40px;
-    height: 38.5px;
-    line-height: 38.5px;
+    height: 38.3px;
+    line-height: 38.3px;
     position: absolute;
     top: 33.5px;
     right: 0;

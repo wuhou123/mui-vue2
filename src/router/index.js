@@ -94,8 +94,9 @@ const router = new Router({
     },
     // 商家列表
     {
-      path: '/restaurant_list',
-      component: RestaurantList
+      path: '/restaurant_list/',
+      component: RestaurantList,
+      meta:{title:'商家列表',isShowHead:true,isShowFoot:false,isShowBack:true}
     },
     // 商家模块
     {
@@ -105,7 +106,8 @@ const router = new Router({
       children: [
         {
           path: 'goods',
-          component: Goods
+          component: Goods,
+          meta:{title:'商家详情',isShowHead:false,isShowFoot:false,isShowBack:true}
         },
         {
           path: 'ratings',
@@ -143,9 +145,19 @@ const router = new Router({
 })
 	router.afterEach(function(to,from){
 		console.log(to.meta.title,to.meta.isShowBack)
+		var toL = to.path.split('/').length;
+		var fromL = from.path.split('/').length;
+		var trans;
+		if(toL == fromL){
+			trans = 'fade'
+		}else{
+			trans = toL>fromL?'next':'prev'
+		}
 		if(to.meta.title){
 			store.dispatch("updateNavbarTitle", to.meta.title);
-			store.dispatch('updateNavbarStatus',{isShowHead:to.meta.isShowHead,isShowFoot:to.meta.isShowFoot,isShowBack:to.meta.isShowBack})
+			//过渡效果
+			store.dispatch('updateTransition',trans)
+			store.dispatch('updateNavbarStatus',{isShowHead:to.meta.isShowHead,isShowFoot:to.meta.isShowFoot,isShowBack:to.meta.isShowBack})			
 			document.title = "加时代-" + to.meta.title || "";
 		}		
 	})

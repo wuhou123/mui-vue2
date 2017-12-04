@@ -73,7 +73,7 @@ import CartControl from '@/components/base/cart-control/cart-control'
 import GoodsDetail from '@/components/index/restaurant-detail/goods-detail/goods-detail'
 import BScroll from 'better-scroll'
 import axios from 'axios'
-
+import importUrl from '../../../../../mock/seller.json'
 export default {
   components: {
     Shopcart,
@@ -104,6 +104,17 @@ export default {
   methods: {
     // 初始化数据
     _initData () {
+    	if(process.env.NODE_ENV == 'production'){
+    		this.goods = importUrl.goods;
+         // DOM 渲染完成才能进行计算
+        setTimeout(() => {
+          // 初始化 BScroll
+          this._initScroll()
+          // 计算右侧每一大项的高度
+          this._calcHeight()
+        }, 20)   		
+    		return
+    	}     	
       axios.get('/api/goods').then(res => {
         if (res.data.code === 0) {
           this.goods = res.data.data

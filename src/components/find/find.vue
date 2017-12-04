@@ -13,7 +13,7 @@
 import axios from 'axios'
 import TabBar from '@/components/base/tab-bar/tab-bar'
 import FindItem from '@/components/base/find-item/find-item'
-
+import importUrl from '../../../mock/find-list'
 export default {
   components: {
     TabBar,
@@ -28,6 +28,11 @@ export default {
   watch: {},
   methods: {
     _initFindListData () {
+    	console.log(importUrl)
+    	if(process.env.NODE_ENV == 'production'){
+    		this.findListData = importUrl.data
+    		return;
+    	}    	    	
       axios.get('/api/findList').then(res => {
         if (res.data.code === 0) {
           this.findListData = res.data.data.data

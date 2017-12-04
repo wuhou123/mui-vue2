@@ -27,6 +27,7 @@
 import SellerHeader from '@/components/base/seller-header/seller-header'
 import axios from 'axios'
 import utils from '@/assets/js/utils.js'
+import importUrl from '../../../../mock/seller'
 
 export default {
   components: {
@@ -58,7 +59,10 @@ export default {
       // }, err => {
       //   console.log(err)
       // })
-
+    	if(process.env.NODE_ENV == 'production'){
+    		this.seller = importUrl.data
+    		return;
+    	} 
       axios.get('/api/seller?id=' + this.seller.id).then(res => {
         if (res.data.code === 0) {
           // this.seller = res.data.data
