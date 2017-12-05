@@ -112,7 +112,7 @@ export default {
           this._initScroll()
           // 计算右侧每一大项的高度
           this._calcHeight()
-        }, 20)   		
+        },500)   		
     		return
     	}     	
       axios.get('/api/goods').then(res => {

@@ -198,3 +198,7 @@
 //     height: 100%;
 //   }
 // }
+//状态栏30pxmargin设置
+@mixin muiMargin($m:30px){
+    margin-top:$m
+}

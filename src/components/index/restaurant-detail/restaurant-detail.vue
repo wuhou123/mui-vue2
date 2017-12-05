@@ -60,7 +60,7 @@ export default {
       //   console.log(err)
       // })
     	if(process.env.NODE_ENV == 'production'){
-    		this.seller = importUrl.data
+    		this.seller = importUrl.seller
     		return;
     	} 
       axios.get('/api/seller?id=' + this.seller.id).then(res => {
