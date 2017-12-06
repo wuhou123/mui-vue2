@@ -71,6 +71,11 @@ const Home = (resolve) => {
     resolve(module)
   })
 }
+const Maps = (resolve) => {
+  import('@/components/maps/maps').then((module) => {
+    resolve(module)
+  })
+}
 
 const router = new Router({
   routes: [
@@ -140,6 +145,11 @@ const router = new Router({
       path: '/home',
       component: Home,
    		meta:{title:'会员',isShowHead:false,isShowFoot:true,isShowBack:false}
+    },
+    {
+      path: '/maps',
+      component: Maps,
+   		meta:{title:'我的足迹',isShowHead:true,isShowFoot:false,isShowBack:true}
     }
   ]
 })

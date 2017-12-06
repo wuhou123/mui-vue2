@@ -31,7 +31,7 @@
         <i class="iconfont icon-shoucang1"></i>
       </cross-item>
 
-      <cross-item name="我的足迹">
+      <cross-item name="我的足迹" @tap.native = "go('maps')">
         <i class="iconfont icon-zuji"></i>
       </cross-item>
 
@@ -79,6 +79,9 @@ export default {
       this.$router.push({
         path: '/login'
       })
+    },
+    go(type){
+    	this.$router.push('./'+type)
     }
   },
   filters: {},
