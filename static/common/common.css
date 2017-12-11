@@ -252,4 +252,162 @@ ul li {
 		transform: rotate(360deg);
 	}
 }
-/*首页*/
+/*我的足迹*/
+	.ellipse {
+		-webkit-animation: elliani 1s ease 0s infinite alternate;
+		animation: elliani 1s ease 0s infinite alternate;
+		background-color:#F2970B;
+		border: 3px solid #fff;
+		border-radius: 10px / 5px;
+		box-shadow: 1px 2px 4px #000;
+		height: 10px;
+		position: absolute;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		width: 20px
+	}
+	@-webkit-keyframes elliani {
+		from {
+			box-shadow: 1px 2px 4px #000;
+			opacity: 1;
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
+		} to {
+			box-shadow: 1px 2px 2px #000;
+			opacity: 0.7;
+			-webkit-transform: translate(-50%, -50%) scale(0.8);
+			transform: translate(-50%, -50%) scale(0.8);
+		}
+	}
+	@keyframes elliani {
+		from {
+			box-shadow: 1px 2px 4px #000;
+			opacity: 1;
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
+		} to {
+			box-shadow: 1px 2px 2px #000;
+			opacity: 0.7;
+			-webkit-transform: translate(-50%, -50%) scale(0.8);
+			transform: translate(-50%, -50%) scale(0.8);
+		}
+	}
+/*	app.vue*/
+  .iconColor {
+    color: #FF5E52
+  }
+
+  .mui-table-view .mui-media-object {
+    line-height: 122px;
+    max-width: 122px;
+    height: 122px;
+  }
+
+  .mui-bar ~ .mui-content .mui-fullscreen {
+    top: 44px;
+    height: auto;
+  }
+
+  .mui-fullscreen {
+    bottom: 50px;
+  }
+
+  .mui-pull-top-tips {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  .mui-bar ~ .mui-pull-top-tips {
+    top: 24px;
+  }
+
+  .mui-pull-top-wrapper {
+    width: 42px;
+    height: 42px;
+    display: block;
+    text-align: center;
+    background-color: #efeff4;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-clip: padding-box;
+    box-shadow: 0 4px 10px #bbb;
+    overflow: hidden;
+  }
+
+  .mui-pull-top-tips.mui-transitioning {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+  }
+
+  .mui-pull-top-tips .mui-pull-loading {
+    /*-webkit-backface-visibility: hidden;
+                -webkit-transition-duration: 400ms;
+                transition-duration: 400ms;*/
+    margin: 0;
+  }
+
+  .mui-pull-top-wrapper .mui-icon,
+  .mui-pull-top-wrapper .mui-spinner {
+    margin-top: 7px;
+  }
+
+  .mui-pull-top-wrapper .mui-icon.mui-reverse {
+    /*-webkit-transform: rotate(180deg) translateZ(0);*/
+  }
+
+  .mui-pull-bottom-tips {
+    text-align: center;
+    background-color: #efeff4;
+    font-size: 15px;
+    line-height: 40px;
+    color: #777;
+  }
+
+  .mui-pull-top-canvas {
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px #bbb;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .mui-pull-top-canvas canvas {
+    width: 40px;
+  }
+  
+  .mui-pull-bottom-tips {
+    background-color: #f0ad4e;
+    color: #eeefdd;
+  }
+    /*加载样式修改*/
+  .loadingImages {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    background: url(../loading2.gif) no-repeat center center;
+    background-size: cover
+  }
+  .mui-pull-bottom-wrapper {
+    display: none
+  }
+/*  首页加载更多出现*/
+  #item1mobile .mui-pull-bottom-wrapper {
+    display: block
+  }
+/*  消除logo*/
+  .amap-logo{
+	display:none;
+	visibility:hidden
+}
+   .amap-copyright{
+	display:none;
+	visibility:hidden !important
+}

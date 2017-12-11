@@ -1,146 +1,143 @@
 <template lang='pug'>
-  .mui-content
-    #slider.mui-slider.mui-fullscreen(@slide='changeTab')
-      .mui-input-row.mui-search.muiIput
-        input.mui-input-clear(type='search', placeholder='购物先搜劵，年省能过万', disabled='')
-      .shopping
-        i.iconfont.icon-shangchangtubiao-6
-      #sliderSegmentedControl.mui-scroll-wrapper.mui-slider-indicator.mui-segmented-control.mui-segmented-control-inverted
-        #scrollM.mui-scroll
-          template(v-for='(nav,index) in menus')
-            a.mui-control-item.getScrolls(:href="'#'+nav.nav", :class="{'mui-active':index==0}", @tap.native='alert(index,$event)')
-              span.getScroll {{nav.name}}
-      .checkHome(@tap='showPopover')
-        i.iconfont(:class='classChange')
-      .hideMenus(:class='{menuShow:IsShow,menuHidden:!IsShow}')
-        ul
-          li.menuFont(v-for='(item,index) in menus', :class='{changeCheck:index==setIndex}', @tap='setIdex(index)') {{item.name}}
-      .mui-slider-group.muiMargin
-        template(v-for='(item,index) in menus')
-          .mui-slider-item.mui-control-content(:id='item.nav', :class="{'mui-active':index==0}")
-            #scroll1.mui-scroll-wrapper
-              .mui-scroll(v-if='index==0')
-                // 精选内容
-                #slider.mui-slider
-                  .mui-slider-group.mui-slider-loop
-                    // 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播)
-                    .mui-slider-item.mui-slider-item-duplicate
-                      a(href='#')
-                        img(src='./img/yuantiao.jpg')
-                    // 轮播图
-                    template(v-for='item in items')
-                      .mui-slider-item
-                        a(:href='item.href')
-                          img(v-lazy='item.src')
-                    // 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播)
-                    .mui-slider-item.mui-slider-item-duplicate
-                      a(href='#')
-                        img(src='./img/shuijiao.jpg')
-                  .mui-slider-indicator
-                    .mui-indicator(v-for='(item,index) in items', :class="{'mui-active ':index===0}")
-                ul.mui-table-view.mui-grid-view.mui-grid-9(style='margin:5px 0px;background-color:#FFFFFF;')
-                  template(v-for='(item,index) in navs')
-                    li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-3.fenleilist(style='border-right:none;border-bottom:none;width:20%;padding:11px;font-size:12px;')
-                      a(name='item.name', :href='item.href')
-                        span.mui-icon.iconfont.iconColor(:class='item.icon')
-                        .mui-media-body(style='font-size:12px;')
-                          | {{item.name }}
-                div.biqiang
-                  span.fontToday 今日必抢
-                  span.fontTime 每天9:00
-                  span.fontPro
-                    | 爆款天天好货
-                    i.iconfont.icon-xiayibu
-                .mui-slider
-                  .mui-slider-group
-                    .mui-slider-item(v-for='(n,index) in 2' :class = "{'mui-active':index == 0}")
-                      ul.mui-table-view.mui-grid-view
-                        li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
-                          a(href='#')
-                            img.mui-media-object(:src='test')
-                            .mui-media-body Color of SIP CBD
-                            div
-                              span.fontR ￥12
-                              span.fontCard 劵后价
-                        li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
-                          a(href='#')
-                            img.mui-media-object(src='./img/yuantiao.jpg')
-                            .mui-media-body 静静看这世界
-                            div
-                              span.fontR ￥12
-                              span.fontCard 劵后价
-                        li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
-                          a(href='#')
-                            img.mui-media-object(src='./img/yuantiao.jpg')
-                            .mui-media-body 静静看这世界
-                            div
-                              span.fontR ￥12
-                              span.fontCard 劵后价
-                ul.mui-table-view.sub-table(style='background-color:transparent;')
-                  // 分类区域
-                  ul.mui-table-view.mui-grid-view(style='margin-top:7px;background-color:#fff;padding:0 6px 2px 0;')
-                    li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
-                      a(href='#')
-                        img.mui-media-object(style='border-radius:5px', src='./img/ad1.jpg')
-                    li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
-                      a(href='#')
-                        img.mui-media-object(style='border-radius:5px', src='./img/ad2.jpg')
-                    li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
-                      a(href='#')
-                        img.mui-media-object(style='border-radius:5px', src='./img/ad3.jpg')
-                    li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
-                      a(href='#')
-                        img.mui-media-object(style='border-radius:5px', src="./img/ad4.jpg")
-                  // 上新区域
-                  #banner
-                    span
-                      i.iconfont.icon-shangchangtubiao-
-                      | 实时上新
-                    span
-                      i.iconfont.icon-shangchangtubiao-7
-                      | 独家优惠
-                    span
-                      i.iconfont.icon-shangchangtubiao-14
-                      | 全场包邮
-                    canvas#myCanvas(width='100%', height='100%')
-                  template(v-for='data in item.contentData')
-                    li.mui-media.viewBody(style='margin:3px 0;background-color:#ffffff;')
-                      a(href='javascript:;')
-                        img.mui-media-object.mui-pull-left(v-lazy='lazyImg', style='border-radius:4px;')
-                        .mui-media-body(style='font-size:14px;')
-                          span.mui-badge.mui-badge-danger.muiBadge 天猫
-                          p.pageTwo 泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好
-                          p(style='margin-top:24px')
-                            span.mui-ellipsis(style='font-size:12px;text-decoration:line-through;color:#888888') ￥12
-                            span.mui-ellipsis(style='font-size:12px;margin:0 0 12px 10px;color:#888888')
-                              | 劵后价
-                              span(style='font-size:14px;color:#FF5E52;') ￥10
-                          span.mui-badge.mui-badge-danger(style='float:left;') 领劵立减100元
-                          button.mui-btn.mui-btn-danger.mui-btn-outlined.getCard(type='button') 立即领取
-                // end
-              .mui-scroll(v-if='index!=0')
-                ul.mui-table-view.TabMargin
-                  li.viewBody.mui-media.muiLi(v-for='data in item.contentData')
-                    a(href='javascript:;')
-                      img.mui-media-object.muiListImg(v-lazy='lazyImg', style='border-radius:4px')
-                      .mui-media-body(style='font-size:14px')
-                        span.mui-badge.mui-badge-danger.muiBadge 天猫
-                        p.pageTwo 泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好
-                        p(style='margin-top:24px')
-                          span.mui-ellipsis(style='font-size:12px;text-decoration:line-through;color:#888888') ￥12
-                          span.mui-ellipsis(style='font-size:12px;margin:0 0 12px 10px;color:#888888')
-                            | 劵后价
-                            span(style='font-size:14px;color:#FF5E52;') ￥10
-                        span.mui-badge.mui-badge-danger(style='float:left;') 领劵立减100元
+	.mui-content
+		#slider.mui-slider.mui-fullscreen(@slide="changeTab")
+			.mui-input-row.mui-search.muiIput
+				input.mui-input-clear(type="search",placeholder="购物先搜劵，年省能过万",disabled='')
+			.shopping
+				i.iconfont.icon-shangchangtubiao-6
+			#sliderSegmentedControl.mui-scroll-wrapper.mui-slider-indicator.mui-segmented-control.mui-segmented-control-inverted
+				#scrollM.mui-scroll
+					template(v-for='(nav,index) in menus')
+						a.mui-control-item.getScrolls(:href="'#'+nav.nav", :class="{'mui-active':index==0}", @tap.native='alert(index,$event)')
+							span.getScroll {{nav.name}}
+			.checkHome(@tap='showPopover')
+				i.iconfont(:class='classChange')
+			.hideMenus(:class='{menuShow:IsShow,menuHidden:!IsShow}')
+				ul
+					li.menuFont(v-for='(item,index) in menus', :class='{changeCheck:index==setIndex}', @tap='setIdex(index)') {{item.name}}
+			.mui-slider-group.muiMargin
+				template(v-for='(item,index) in menus')
+					.mui-slider-item.mui-control-content(:id='item.nav', :class="{'mui-active':index==0}")
+						#scroll1.mui-scroll-wrapper
+							.mui-scroll(v-if='index==0')
+								#slider.mui-slider
+									.mui-slider-group.mui-slider-loop
+										.mui-slider-item.mui-slider-item-duplicate
+											a(href="#")
+												img(:src="logo2")
+										.mui-slider-item(v-for="item in items")
+											a(href="#")
+												img(:src="item.src")
+										.mui-slider-item.mui-slider-item-duplicate
+											a(href="#")
+												img(:src="logo1")
+									.mui-slider-indicator
+										.mui-indicator(v-for='(item,index) in items', :class="{'mui-active ':index===0}")
+								ul.mui-table-view.mui-grid-view.mui-grid-9(style='margin:5px 0px;background-color:#FFFFFF;')
+									template(v-for='(item,index) in navs')
+										li.mui-table-view-cell.mui-media.mui-col-xs-4.mui-col-sm-3.fenleilist(style='border-right:none;border-bottom:none;width:20%;padding:11px;font-size:12px;')
+											a(name='item.name', :href='item.href')
+												span.mui-icon.iconfont.iconColor(:class='item.icon')
+												.mui-media-body(style='font-size:12px;')
+													| {{item.name }}
+								div.biqiang
+									span.fontToday 今日必抢
+									span.fontTime 每天9:00
+									span.fontPro
+										| 爆款天天好货
+										i.iconfont.icon-xiayibu
+								.mui-slider
+									.mui-slider-group
+										.mui-slider-item(v-for='(n,index) in 2' :class = "{'mui-active':index == 0}")
+											ul.mui-table-view.mui-grid-view
+												li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
+													a(href='#')
+														img.mui-media-object(:src='test')
+														.mui-media-body Color of SIP CBD
+														div
+															span.fontR ￥12
+															span.fontCard 劵后价
+												li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
+													a(href='#')
+														img.mui-media-object(src='./img/yuantiao.jpg')
+														.mui-media-body 静静看这世界
+														div
+															span.fontR ￥12
+															span.fontCard 劵后价
+												li.mui-table-view-cell.mui-media.mui-col-xs-4.repairPadding
+													a(href='#')
+														img.mui-media-object(src='./img/yuantiao.jpg')
+														.mui-media-body 静静看这世界
+														div
+															span.fontR ￥12
+															span.fontCard 劵后价
+								ul.mui-table-view.sub-table(style='background-color:transparent;')
+									ul.mui-table-view.mui-grid-view(style='margin-top:7px;background-color:#fff;padding:0 6px 2px 0;')
+										li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
+											a(href='#')
+												img.mui-media-object(style='border-radius:5px', src='./img/ad1.jpg')
+										li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
+											a(href='#')
+												img.mui-media-object(style='border-radius:5px', src='./img/ad2.jpg')
+										li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
+											a(href='#')
+												img.mui-media-object(style='border-radius:5px', src='./img/ad3.jpg')
+										li.mui-table-view-cell.mui-media.mui-col-xs-6(style='padding:7px 0 0 13px;')
+											a(href='#')
+												img.mui-media-object(style='border-radius:5px', src="./img/ad4.jpg")
+									// 上新区域
+									#banner
+										span
+											i.iconfont.icon-shangchangtubiao-
+											| 实时上新
+										span
+											i.iconfont.icon-shangchangtubiao-7
+											| 独家优惠
+										span
+											i.iconfont.icon-shangchangtubiao-14
+											| 全场包邮
+										canvas#myCanvas(width='100%', height='100%')
+									template(v-for='data in item.contentData')
+										li.mui-media.viewBody(style='margin:3px 0;background-color:#ffffff;')
+											a(href='javascript:;')
+												img.mui-media-object.mui-pull-left(v-lazy='lazyImg', style='border-radius:4px;')
+												.mui-media-body(style='font-size:14px;')
+													span.mui-badge.mui-badge-danger.muiBadge 天猫
+													p.pageTwo 泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好
+													p(style='margin-top:24px')
+														span.mui-ellipsis(style='font-size:12px;text-decoration:line-through;color:#888888') ￥12
+														span.mui-ellipsis(style='font-size:12px;margin:0 0 12px 10px;color:#888888')
+															| 劵后价
+															span(style='font-size:14px;color:#FF5E52;') ￥10
+													span.mui-badge.mui-badge-danger(style='float:left;') 领劵立减100元
+													button.mui-btn.mui-btn-danger.mui-btn-outlined.getCard(type='button') 立即领取
+								// end
+							.mui-scroll(v-if='index!=0')
+								ul.mui-table-view.TabMargin
+									li.viewBody.mui-media.muiLi(v-for='data in item.contentData')
+										a(href='javascript:;')
+											img.mui-media-object.muiListImg(v-lazy='lazyImg', style='border-radius:4px')
+											.mui-media-body(style='font-size:14px')
+												span.mui-badge.mui-badge-danger.muiBadge 天猫
+												p.pageTwo 泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好
+												p(style='margin-top:24px')
+													span.mui-ellipsis(style='font-size:12px;text-decoration:line-through;color:#888888') ￥12
+													span.mui-ellipsis(style='font-size:12px;margin:0 0 12px 10px;color:#888888')
+														| 劵后价
+														span(style='font-size:14px;color:#FF5E52;') ￥10
+												span.mui-badge.mui-badge-danger(style='float:left;') 领劵立减100元
 </template>
 <script>  
   import 'static/js/mui.pullToRefresh.js'
   import 'static/js/mui.pullToRefresh.material.js'
-	import mui from 'static/js/mui'	
-	import 'static/common/common.css'
+	import mui from 'static/js/mui'
+	import item1 from './img/shuijiao.jpg'
+	import item2 from './img/yuantiao.jpg'
   export default {
     data () {
       return {
+      	logo1:item1,
+      	logo2:item2,
       	test:require('./img/shuijiao.jpg'),
         lazyImg: '',
         setIndex: 0,
@@ -148,10 +145,10 @@
         IsShow: false,
         items: [{
           href: '#',
-          src:require('./img/shuijiao.jpg')
+          src:item1
         }, {
           href: '#',
-          src: require('./img/yuantiao.jpg')
+          src:item2
         }],
         navs: [{
           name: '女装',
@@ -437,101 +434,12 @@
   }
 </script>
 
-<style>
+<style scoped>
+	@import '~static/common/common.css';
   .mui-content,
   body,
   html {
     height: 100% !important
-  }
-  
-  .iconColor {
-    color: #FF5E52
-  }
-
-  .mui-table-view .mui-media-object {
-    line-height: 122px;
-    max-width: 122px;
-    height: 122px;
-  }
-
-  .mui-bar ~ .mui-content .mui-fullscreen {
-    top: 44px;
-    height: auto;
-  }
-
-  .mui-fullscreen {
-    bottom: 50px;
-  }
-
-  .mui-pull-top-tips {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    margin-left: -25px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    z-index: 1;
-  }
-
-  .mui-bar ~ .mui-pull-top-tips {
-    top: 24px;
-  }
-
-  .mui-pull-top-wrapper {
-    width: 42px;
-    height: 42px;
-    display: block;
-    text-align: center;
-    background-color: #efeff4;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    background-clip: padding-box;
-    box-shadow: 0 4px 10px #bbb;
-    overflow: hidden;
-  }
-
-  .mui-pull-top-tips.mui-transitioning {
-    -webkit-transition-duration: 200ms;
-    transition-duration: 200ms;
-  }
-
-  .mui-pull-top-tips .mui-pull-loading {
-    /*-webkit-backface-visibility: hidden;
-                -webkit-transition-duration: 400ms;
-                transition-duration: 400ms;*/
-    margin: 0;
-  }
-
-  .mui-pull-top-wrapper .mui-icon,
-  .mui-pull-top-wrapper .mui-spinner {
-    margin-top: 7px;
-  }
-
-  .mui-pull-top-wrapper .mui-icon.mui-reverse {
-    /*-webkit-transform: rotate(180deg) translateZ(0);*/
-  }
-
-  .mui-pull-bottom-tips {
-    text-align: center;
-    background-color: #efeff4;
-    font-size: 15px;
-    line-height: 40px;
-    color: #777;
-  }
-
-  .mui-pull-top-canvas {
-    overflow: hidden;
-    background-color: #fafafa;
-    border-radius: 40px;
-    box-shadow: 0 4px 10px #bbb;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-  }
-
-  .mui-pull-top-canvas canvas {
-    width: 40px;
   }
 
   .mui-slider-indicator.mui-segmented-control {
@@ -744,15 +652,7 @@
     max-width: 100%;
     height: 122px;
   }
-
-  .mui-pull-bottom-wrapper {
-    display: none
-  }
-
-  #item1mobile .mui-pull-bottom-wrapper {
-    display: block
-  }
-
+   
   .mui-segmented-control.mui-segmented-control-inverted {
     border: 0;
     border-radius: 0;
@@ -834,20 +734,6 @@
     background: #FF5E52
   }
 
-  /*加载样式修改*/
-
-  .loadingImages {
-    display: inline-block;
-    width: 100%;
-    height: 40px;
-    background: url(./img/loading2.gif) no-repeat center center;
-    background-size: cover
-  }
-
-  .mui-pull-bottom-tips {
-    background-color: #f0ad4e;
-    color: #eeefdd;
-  }
 /*懒加载样式*/
   /*img[lazy=loading] {
     background: url(./img/loading.gif) no-repeat center center;
@@ -868,4 +754,7 @@
   .mui-table-view.mui-grid-view .repairPadding {
     padding-top: 5px
   }
+	.mui-slider-group,.mui-slider-item,.mui-slider-item > a,.mui-slider-item > a img{
+		height:125px
+	}
 </style>

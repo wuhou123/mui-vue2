@@ -2,8 +2,6 @@
 
 <template>
   <div class="login">
-    <header-bar text="登录注册页" @back="back"></header-bar>
-
     <mt-navbar v-model="selected">
       <mt-tab-item id="1">登录</mt-tab-item>
       <mt-tab-item id="2">注册</mt-tab-item>

@@ -83,7 +83,7 @@ export default {
   background-color: #fff;
   margin-top: 42px;
 }
-.Muimargin{
+.mui-scroll-wrapper.Muimargin{
 	@include muiMargin(0px);
 }
 </style>

@@ -91,7 +91,7 @@
         },
         "NativeObj":{
         	"description": "原生对象"
-        }
+        },"Geolocation":{}
     },
     "plus": {
         "splashscreen": {
@@ -116,7 +116,7 @@
                 "keystore": "",/*Android应用打包使用的密钥库文件*/
                 "password": "",/*Android应用打包使用密钥库中证书的密码*/
                 "aliasname": "",/*Android应用打包���用密钥库中证书的别名*/
-               "permissions": ["<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+               "permissions": ["<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
 				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
             },
             "orientation": [
@@ -187,7 +187,7 @@
                     "xhdpi": "C:/Users/zhoufan/Desktop/图标/splash.png", /*720P高分屏启动图片，分辨率：720x1242*/
                     "xxhdpi": "C:/Users/zhoufan/Desktop/图标/splash.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
-            }
+            },"debug":true
         }
     },
 	"dependencies": {
@@ -195,7 +195,15 @@
 			"dist/index.html": {
 				"resources": [
 					"dist/static/js/app.76cb1f7087009af5fee5.js",
-					"dist/static/js/manifest.87fb648baf6db486ce98.js"
+					"dist/static/js/manifest.87fb648baf6db486ce98.js",
+					"dist/static/js/vendor.c8b8339f9484203a4709.js",
+					"dist/static/js/manifest.c8f44de723925bf87bb2.js",
+					"dist/static/js/app.24a2866f101392370608.js",
+					"dist/static/js/vendor.599c675ac34e957b897b.js",
+					"dist/static/js/app.3197b485f2970aa4937f.js",
+					"dist/static/js/manifest.8e686dc2d3a05ee772e7.js",
+					"dist/static/js/app.d77d6fc0b52f2eb1e1f8.js",
+					"dist/static/js/manifest.c47300208b8964835d32.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -863,5 +871,5 @@
 	  "README.md",
 	  "package.json",
 	  "prod.server.js"
-	],"fullscreen":true
+	],"fullscreen":false
 }

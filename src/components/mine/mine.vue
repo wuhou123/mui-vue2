@@ -49,12 +49,12 @@
 
     <!-- 次要的栏目 -->
     <div class="minor">
-      <cross-item name="关于">
+      <cross-item name="关于" @tap.native = "goWebview">
         <i class="iconfont icon-daohangguanyu"></i>
       </cross-item>
     </div>
 
-    <tab-bar></tab-bar>
+<!--    <tab-bar></tab-bar>-->
   </div>
 </template>
 
@@ -77,11 +77,14 @@ export default {
   methods: {
     login () {
       this.$router.push({
-        path: '/login'
+        path: '/login/'
       })
     },
     go(type){
-    	this.$router.push('./'+type)
+    	this.$router.push('./'+type+'/')
+    },
+    goWebview(){
+    	this.$router.push('/guide')
     }
   },
   filters: {},

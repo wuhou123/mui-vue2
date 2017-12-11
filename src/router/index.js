@@ -76,26 +76,32 @@ const Maps = (resolve) => {
     resolve(module)
   })
 }
+const Guide = (resolve) => {
+  import('@/components/guide/guide').then((module) => {
+    resolve(module)
+  })
+}
 
 const router = new Router({
   routes: [
     // 根路径
     {
       path: '/',
-      redirect: '/index',
-      component: Index,
+      redirect: '/home',
+      component: Home,
       meta:{title:'首页',isShowHead:false,isShowFoot:true}
     },
     // 首页
     {
-      path: '/index',
-      component: Index,
+      path: '/home',
+      component: Home,
       meta:{title:'首页',isShowHead:false,isShowFoot:true}
     },
     // 登录
     {
-      path: '/login',
-      component: login      
+      path: '/login/',
+      component: login,
+      meta:{title:'登录注册',isShowHead:true,isShowFoot:false}
     },
     // 商家列表
     {
@@ -142,14 +148,19 @@ const router = new Router({
       meta:{title:'我的',isShowHead:true,isShowFoot:true,isShowBack:true}
     },
     {
-      path: '/home',
-      component: Home,
+      path: '/index',
+      component: Index,
    		meta:{title:'会员',isShowHead:false,isShowFoot:true,isShowBack:false}
     },
     {
-      path: '/maps',
+      path: '/maps/',
       component: Maps,
    		meta:{title:'我的足迹',isShowHead:true,isShowFoot:false,isShowBack:true}
+    },
+    {
+      path: '/guide',
+      component: Guide,
+   		meta:{title:'引导页',isShowHead:false,isShowFoot:false,isShowBack:false}
     }
   ]
 })

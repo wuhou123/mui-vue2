@@ -25,13 +25,13 @@ export default {
         icon:'icon-home-normal',
         iconActive:'icon-home-press',
         name:'首页',
-        router:'/index'
+        router:'/home'
       },
         {
           icon:'icon-More-normal',
           iconActive:'icon-More-press',
           name:'会员',
-          router:'/home'
+          router:'/index'
         },
         {
           icon:'icon-youhuijuan-xianxing',
@@ -49,9 +49,26 @@ export default {
     }
   },
   created (){
+  	var that = this;
   	console.log('初始进入')
   	//当app.vue创建完成以后，自动加载Home.vue模块
-		 this.$router.push('/index')
+  	if(!localStorage.firstIn){
+  		this.$router.push('/guide');
+  		return;
+  	}
+  	//初始化等待框
+  	mui.plusReady(function(){
+  		plus.nativeUI.showWaiting('初始化')	
+  	}  		
+  	)
+  	setTimeout(function(){
+  		mui.plusReady(function(){
+  			plus.nativeUI.closeWaiting();		
+  		}  		
+  	)
+  		that.$router.push('/home')
+  	},1000)
+		 	
   },
   methods:{
     goTo(item){
@@ -62,7 +79,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import '~static/common/common.css';
 @import '~static/css/muihead.css';
 /*body{
@@ -77,8 +94,8 @@ export default {
 	margin-top: 45px;
 }*/
 .fade-enter-active {
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
     opacity: 1
 }
 
