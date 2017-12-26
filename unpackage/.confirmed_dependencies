@@ -1,0 +1,16 @@
+{
+	"dist/index.html": {
+		"resources": [
+			"dist/static/js/app.76cb1f7087009af5fee5.js",
+			"dist/static/js/manifest.87fb648baf6db486ce98.js",
+			"dist/static/js/vendor.c8b8339f9484203a4709.js",
+			"dist/static/js/manifest.c8f44de723925bf87bb2.js",
+			"dist/static/js/app.24a2866f101392370608.js",
+			"dist/static/js/vendor.599c675ac34e957b897b.js",
+			"dist/static/js/app.3197b485f2970aa4937f.js",
+			"dist/static/js/manifest.8e686dc2d3a05ee772e7.js",
+			"dist/static/js/app.d77d6fc0b52f2eb1e1f8.js",
+			"dist/static/js/manifest.c47300208b8964835d32.js"
+		]
+	}
+}
