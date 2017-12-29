@@ -3,7 +3,7 @@
 
 **这是升级到vue2.x和webpack再重新配置成单页面app  ， 如果想看vue1.0+gulp多页面app请看仓库mui-vue[地址](https://github.com/wuhou123/mui-vue)**
 
-app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键打包成APP，也可以借助eclipse本地打包（本地打包是有添加Android sdk包的需求，这里没有介绍，只是简单构建使用，本地打包工程如需可以索取）。这些都是[dcloud](http://www.dcloud.io/index.html)提供一整套技术解决方案。
+app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键打包成APP，也可以借助eclipse本地打包（本地打包是有添加Android sdk包的需求，这里没有介绍，只是简单构建使用，本地打包工程文件如需可以索取）。这些都是[dcloud](http://www.dcloud.io/index.html)提供一整套技术解决方案。
 
 **说明:** 编辑和项目开发借鉴了github上yujinjin/fans和vue美团的项目，项目只是基本页面，后面再添加页面和后端接口
 
