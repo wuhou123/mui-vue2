@@ -154,19 +154,19 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 
 ```
-|-- build                      // 编译后目录
+|-- build                     // 编译后目录
 |   |--                       // 编译app的html模板页面
 |   |--                       // 编译app的css
 |   |--                       // 编译app的js
-|-- src                                 // 源码目录
+|-- src                       // 源码目录
 |   |--                       // app的html页面
 |   |--                       // app的css
 |   |--                       // app的js
-|-- unpackage                           // app编译包目录
-|--                             // gulp配置
-|-- index.html                          // webapp的首页加载文件
-|-- manifest.json                       // 打包app的配置文件
-|-- package.json                        // 配置项目相关信息，通过执行 npm init 命令创建
+|-- unpackage                 // app编译包目录
+|-- static                    // 资源库（js、图片等）
+|-- index.html                // app的首页加载文件
+|-- manifest.json             // 打包app的配置文件
+|-- package.json              // 配置项目相关信息，通过执行 npm init 命令创建
 ```
 
 
