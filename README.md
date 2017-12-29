@@ -14,11 +14,11 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 ## 展示
 
-<img src="http://www.hao123456.online/mui-vue2/test1.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px">
+<img src="http://www.hao123456.online/mui-vue2/test1.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px;border:1px solid #bbb">
 
-<img src="http://www.hao123456.online/mui-vue2/test2.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px">
+<img src="http://www.hao123456.online/mui-vue2/test2.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px;border:1px solid #bbb">
 
-<img src="http://www.hao123456.online/mui-vue2/test3.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px">
+<img src="http://www.hao123456.online/mui-vue2/test3.gif" alt="screenshot" title="screenshot" style="float:left;margin:5px;border:1px solid #bbb">
 
 ### 手机上查看
 
