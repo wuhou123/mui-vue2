@@ -1,7 +1,7 @@
 ## mui-vue2
-基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接二维码下载](https://www.pgyer.com/jia123)。 
+基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接APP下载](https://www.pgyer.com/jia123)。 
 
-**这是升级到vue2.x和webpack再重新配置成单页面app如果想看vue1.0+gulp多页面app请看仓库mui-vue[地址](https://github.com/wuhou123/mui-vue)**
+**这是升级到vue2.x和webpack再重新配置成单页面app  ， 如果想看vue1.0+gulp多页面app请看仓库mui-vue[地址](https://github.com/wuhou123/mui-vue)**
 
 app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键打包成APP，也可以借助eclipse本地打包（本地打包是有添加Android sdk包的需求，这里没有介绍，只是简单构建使用，本地打包工程如需可以索取）。这些都是[dcloud](http://www.dcloud.io/index.html)提供一整套技术解决方案。
 
@@ -14,13 +14,12 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 ## 展示
 
-<figure class="third">
-    <img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/25164634.jpg">
-    <img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/63382312.jpg">
-    <img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/35430788.jpg">
-</figure>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/25164634.jpg" alt="screenshot" title="screenshot" width="250" height="436" ></div>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/63382312.jpg" alt="screenshot" title="screenshot" width="250" height="436" ></div>
+<div style="float:left;border:solid 1px 000;margin:2px;"><img src="http://osk1hpe2y.bkt.clouddn.com/17-12-29/35430788.jpg" alt="screenshot" title="screenshot" width="250" height="436" ></div>
+<div style="clear:both;"></div>
 
-###手机上查看
+### 手机上查看
 
 ![图片](http://osk1hpe2y.bkt.clouddn.com/17-12-29/79549622.jpg)
 
@@ -178,10 +177,20 @@ git clone https://github.com/wuhou123/mui-vue2.git
 ```
 通过`npm`安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
 
-启动发布DEV代码
+启动发布代码
 
 ```
+//初始化
+
 npm install
+
+//开发
+
+npm run dev
+
+//发布
+
+npm run build
 
 ```
 
