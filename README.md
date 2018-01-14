@@ -1,7 +1,9 @@
 ## mui-vue2
 基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接APP下载](https://www.pgyer.com/jia123)。
 
-项目文档地址：[mui-vue2说明文档](http://hao123456.online/use/)。 
+项目文档地址：[mui-vue2说明文档](http://hao123456.online/use/)。
+
+码云项目地址（访问比较快）：[码云mui-vue2项目](https://gitee.com/wuhou123/mui-vue2/)。
 
 **这是升级到vue2.x和webpack再重新配置成单页面app  ， 如果想看vue1.0+gulp多页面app请看仓库mui-vue[地址](https://github.com/wuhou123/mui-vue)**
 
