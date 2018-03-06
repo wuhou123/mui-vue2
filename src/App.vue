@@ -2,7 +2,7 @@
   div
     #content.routerview.viewMargin
       header.mui-bar.mui-bar-nav(v-if="$store.state.appData.isShowHead")
-        a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left(v-show="$store.state.appData.isShowBack")
+        a.mui-action-back.iconfont.icon-left-j.mui-pull-left(v-show="$store.state.appData.isShowBack")
         h1.mui-title {{$store.state.appData.navbarTitle}}
       transition(:name='$store.state.routerStatus.transition',mode="out-in")
         router-view
@@ -146,5 +146,9 @@ export default {
 }
 .mui-bar-nav + div{
   margin-top: 30px;
+}
+/*弃用mui的icon改用自己的iconfont*/
+.icon-left-j{
+	line-height:30px
 }
 </style>

@@ -388,8 +388,8 @@
         this.setIndex = index
         //加载初次数据这里是模拟ajax请求，请求完后赋值contentData就可以了
         if (index >= 0) {
-          app.Vwaiting('加载中...')
-          setTimeout(function () {
+          	app.Vwaiting()
+          	setTimeout(function () {
             app.Cwaiting()
             that.menus[index].contentData = [{
               name: '1'
@@ -720,14 +720,14 @@
     visibility: visible;
     height: 117px;
     opacity: 1;
-    transition: all 0.5s
+    transition: all 0.5s ease-out
   }
 
   .menuHidden {
     visibility: hidden;
     height: 0px;
     opacity: 0;
-    transition: all 0.5s
+    transition: all 0.5s ease-out
   }
 
   .mui-pull-bottom-pocket .mui-pull-loading {

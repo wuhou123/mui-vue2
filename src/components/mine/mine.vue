@@ -49,7 +49,7 @@
 
     <!-- 次要的栏目 -->
     <div class="minor">
-      <cross-item name="关于" @tap.native = "goWebview">
+      <cross-item name="关于" @tap.native = "go('about')">
         <i class="iconfont icon-daohangguanyu"></i>
       </cross-item>
     </div>
@@ -82,9 +82,6 @@ export default {
     },
     go(type){
     	this.$router.push('./'+type+'/')
-    },
-    goWebview(){
-    	this.$router.push('/guide')
     }
   },
   filters: {},

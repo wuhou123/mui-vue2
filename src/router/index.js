@@ -81,6 +81,11 @@ const Guide = (resolve) => {
     resolve(module)
   })
 }
+const About = (resolve) => {
+	import('@/components/about/about').then((module) => {
+		resolve(module)
+	})
+}
 
 const router = new Router({
   routes: [
@@ -161,6 +166,10 @@ const router = new Router({
       path: '/guide',
       component: Guide,
    		meta:{title:'引导页',isShowHead:false,isShowFoot:false,isShowBack:false}
+    },{
+    	path:'/about/',
+    	component: About,
+    	meta:{title:'关于',isShowHead:true,isShowFoot:false,isShowBack:true}
     }
   ]
 })

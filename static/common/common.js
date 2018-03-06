@@ -211,25 +211,6 @@ if (window.Raven) Raven.config('https://8e17a7c1ccb44b50991a96e8f56eb8e3@sentry.
 	 * 显示等待框
 	 * @param {String} message
 	 */
-	app.Vwaiting = function(msg){
-		var relMsg = msg?msg:''
-		if(document.getElementById('loaderWrap')){
-		document.getElementById('loaderWrap').style.display = 'block';
-		document.querySelector('.msg-font').innerText = relMsg
-		return;
-		}
-		var screen = document.createElement("div");
-		screen.id = 'loaderWrap';
-		screen.className = 'loader-wrap';
-		screen.innerHTML = '<div class="loader-container"><div class="loader"></div><span class="msg-font">'+relMsg+'</span></div>';
-		document.body.appendChild(screen);
-	}
-	app.Cwaiting = function(){
-		console.log('进行了:'+document.getElementById('loaderWrap'))
-		if(document.getElementById('loaderWrap')){
-			document.getElementById('loaderWrap').style.display = 'none'
-		}
-	}
 	app.showWaiting = function(message) {
 		if(window.plus) {
 			return plus.nativeUI.showWaiting(message || '请稍候...');

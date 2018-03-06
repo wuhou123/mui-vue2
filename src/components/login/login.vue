@@ -12,7 +12,6 @@
       <mt-tab-container-item id="1" class="login-wrapper">
         <mt-field label="用户名" placeholder="请输入用户名" v-model="login_username"></mt-field>
         <mt-field label="密码" placeholder="请输入密码" type="password" v-model="login_password"></mt-field>
-
         <mt-button type="primary" size="large" @click.native="login">登录</mt-button>
       </mt-tab-container-item>
 
@@ -30,13 +29,8 @@
 </template>
 
 <script>
-import HeaderBar from '@/components/base/header-bar/header-bar'
-import axios from 'axios'
-
+	
 export default {
-  components: {
-    HeaderBar
-  },
   data () {
     return {
       selected: '1',
@@ -77,7 +71,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '~@/assets/scss/const.scss';
 @import '~@/assets/scss/mixin.scss';
 
@@ -100,5 +94,15 @@ export default {
       margin-top: 30px;
     }
   }
+  .mint-cell-value .mint-field-core{
+    line-height: 21px;
+    width: 100%;
+    height: 40px;
+    margin-bottom:0px;
+    padding: 10px 15px;
+    -webkit-user-select: text;
+    border:none
+  }
 }
+
 </style>

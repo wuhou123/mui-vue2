@@ -19,7 +19,7 @@ import '@/assets/ali-fonts/iconfont.css'
 import '../static/css/mui.css'
 
 // 全局引入 mui.js
-import '../static/js/mui'
+import '../static/js/mui'  
 
 // Mint UI
 import Mint from 'mint-ui'
