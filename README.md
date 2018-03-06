@@ -1,5 +1,5 @@
 ## mui-vue2
-基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接APP下载](https://www.pgyer.com/jia123)。
+1.基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接APP下载](https://www.pgyer.com/jia123)。
 
 项目文档地址：[mui-vue2说明文档](http://hao123456.online/use/)。
 
