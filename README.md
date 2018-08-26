@@ -32,6 +32,10 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 ![图片](http://osk1hpe2y.bkt.clouddn.com/18-1-14/57874837.jpg)
 
+### 最近忙微信小程序了，尝鲜体验吧
+
+![二维码](http://osk1hpe2y.bkt.clouddn.com/18-7-19/39403491.jpg)
+
 ## 安装
 - 下载[HBuilder IDE](http://www.dcloud.io/index.html)开发工具，其实HBuilder是dcloud 把eclipse的改造成一个专门应用于app打包、多种语言支持：php、jsp、ruby、python、nodejs等web语言，less、coffee等编译型语言均支持的开发工具
 
