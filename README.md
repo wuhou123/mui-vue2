@@ -32,7 +32,7 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 ![图片](http://osk1hpe2y.bkt.clouddn.com/18-1-14/57874837.jpg)
 
-### 最近忙微信小程序了，尝鲜体验吧
+### 最近忙微信小程序了，尝鲜体验吧 :fire:[开源地址](https://github.com/wuhou123/wxxcx)
 
 ![二维码](http://osk1hpe2y.bkt.clouddn.com/18-8-26/87348357.jpg)
 
