@@ -1,5 +1,6 @@
-## 关于回复
-最近一直很忙，忙于其他项目，如果没有及时回复，可以在此网站下留言，这个网站我最近一直在更新维护，[留言地址](https://wuhou.fun/msg)
+## 如有任何技术问题，关注微信公众号留言
+
+![微信图片_20220410105743.jpg](https://yun.wuhou.fun/qrcode_for_gh_95dd6259df81_258.jpg)
 
 ## mui-vue2
 基于mui+vue2.x的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接APP下载](https://www.pgyer.com/jia123)。
